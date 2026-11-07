@@ -1,0 +1,1473 @@
+PROMPT MAESTRO: CONSTRUCCIÓN DE UNA APLICACIÓN PROFESIONAL DE MACHINE LEARNING PARA ANÁLISIS, ESTIMACIÓN Y PREDICCIÓN MEDIANTE REGRESIÓN LOGÍSTICA
+
+1. CONTEXTO / ROL
+
+Actúa como un equipo multidisciplinario de expertos integrado por:
+
+Senior Data Scientist: especialista en Machine Learning, modelos estadísticos y regresión logística.
+
+Estadístico econométrico: experto en modelos lineales generalizados (GLM), inferencia estadística, estimación por máxima verosimilitud, pruebas de hipótesis e interpretación de parámetros.
+
+Machine Learning Engineer: experto en entrenamiento, optimización, validación y despliegue de modelos predictivos.
+
+Data Engineer: especialista en procesamiento, limpieza, transformación e imputación de grandes volúmenes de información.
+
+Desarrollador Python Senior: experto en Python Dash, Scikit-learn, Statsmodels, Pandas, NumPy y Plotly.
+
+Especialista en analítica sectorial: con experiencia en la construcción de modelos predictivos para diferentes industrias, particularmente sector financiero, banca, seguros, fintech, marketing, comercio, salud y servicios.
+
+Tu misión es diseñar y construir una aplicación profesional de análisis predictivo basada en la metodología de regresión logística, que permita a los usuarios cargar información, preparar sus bases de datos, analizar relaciones entre variables, construir modelos, interpretar coeficientes, estimar probabilidades, evaluar resultados y generar recomendaciones para la toma de decisiones.
+
+La aplicación debe ser universal y adaptable a diferentes sectores económicos.
+
+Utiliza como documentos metodológicos obligatorios:
+
+PDF: REGRESIÓN LOGÍSTICA – Hugo Martínez Gallego.
+
+Código R: 03. Regresión Logística (1)f.R.
+
+Estudia ambos documentos y reproduce sus fundamentos estadísticos y funcionalidades principales en Python. Complementa la metodología con buenas prácticas de Machine Learning, estadística aplicada y validación predictiva.
+
+El objetivo no es desarrollar una calculadora de regresión logística, sino una plataforma integral de analítica predictiva que acompañe al usuario desde la carga de datos hasta la interpretación y utilización de los resultados.
+
+2. CONSULTA / TAREA
+
+Construir una aplicación interactiva que permita desarrollar modelos de regresión logística para estimar la probabilidad de ocurrencia de un evento.
+
+El modelo debe permitir identificar qué variables explican o están asociadas con la probabilidad de ocurrencia de un resultado determinado.
+
+Ejemplos:
+
+Probabilidad de incumplimiento de pago.
+
+Probabilidad de deserción o abandono de clientes (Churn).
+
+Probabilidad de conversión comercial.
+
+Probabilidad de aprobación de una solicitud.
+
+Probabilidad de fraude.
+
+Probabilidad de compra.
+
+Probabilidad de permanencia de empleados.
+
+Probabilidad de ocurrencia de eventos en salud.
+
+Probabilidad de incumplimiento de obligaciones.
+
+La aplicación debe permitir trabajar con bases de datos de cualquier sector económico y no estar condicionada a una estructura de información específica.
+
+3. ESPECIFICACIONES FUNCIONALES Y METODOLÓGICAS
+
+MÓDULO 1. Configuración inicial del proyecto
+
+Al iniciar la aplicación, solicitar:
+
+Nombre del proyecto.
+
+Descripción del objetivo del modelo.
+
+Sector económico.
+
+Variable objetivo (Y).
+
+Variables independientes (X).
+
+Categoría considerada como evento positivo (Y=1).
+
+Categoría considerada como evento negativo (Y=0).
+
+Permitir seleccionar el sector:
+
+Financiero y bancario.
+
+Seguros.
+
+Fintech.
+
+Comercio y retail.
+
+Marketing y publicidad.
+
+Telecomunicaciones.
+
+Salud.
+
+Educación.
+
+Manufactura.
+
+Transporte y logística.
+
+Construcción e inmobiliario.
+
+Recursos humanos.
+
+Servicios.
+
+Agricultura.
+
+Otros.
+
+La aplicación debe permitir que el usuario defina el significado de las categorías de la variable dependiente.
+
+Ejemplo:
+
+1 = Cliente presenta incumplimiento.
+
+0 = Cliente no presenta incumplimiento.
+
+La selección del sector debe personalizar los ejemplos y las interpretaciones, sin alterar arbitrariamente el funcionamiento estadístico del modelo.
+
+MÓDULO 2. Carga e importación de información
+
+Permitir cargar bases de datos mediante:
+
+CSV.
+
+Excel (.xlsx y .xls).
+
+JSON.
+
+TXT.
+
+Parquet, si es técnicamente viable.
+
+Funcionalidades:
+
+Lectura automática de encabezados.
+
+Detección de separadores.
+
+Configuración de codificación.
+
+Configuración de separadores decimales.
+
+Identificación de tipos de variables.
+
+Visualización de las primeras filas.
+
+Número de registros y variables.
+
+Identificación de duplicados.
+
+Identificación de valores faltantes.
+
+Detección de problemas de lectura.
+
+Permitir visualizar la estructura de la información antes de iniciar el análisis.
+
+MÓDULO 3. Análisis exploratorio y descriptivo (EDA)
+
+Implementar un módulo completo de análisis estadístico.
+
+A. Identificación de variables
+
+Clasificar automáticamente:
+
+Variables cuantitativas continuas.
+
+Variables cuantitativas discretas.
+
+Variables cualitativas nominales.
+
+Variables cualitativas ordinales.
+
+Variables binarias.
+
+Variables de fecha.
+
+Identificadores.
+
+Permitir modificar manualmente la clasificación.
+
+B. Estadística descriptiva
+
+Para variables cuantitativas:
+
+Media.
+
+Mediana.
+
+Moda.
+
+Desviación estándar.
+
+Varianza.
+
+Mínimo y máximo.
+
+Percentiles.
+
+Cuartiles.
+
+Rango intercuartílico.
+
+Coeficiente de variación.
+
+Asimetría.
+
+Curtosis.
+
+Para variables categóricas:
+
+Frecuencias.
+
+Porcentajes.
+
+Distribución de categorías.
+
+Categoría predominante.
+
+Cardinalidad.
+
+C. Análisis de la variable objetivo
+
+Realizar un análisis específico de la distribución de Y:
+
+Frecuencia de eventos positivos.
+
+Frecuencia de eventos negativos.
+
+Porcentaje de eventos positivos.
+
+Porcentaje de eventos negativos.
+
+Tasa de ocurrencia del evento.
+
+Distribución de la variable objetivo.
+
+Identificar posibles problemas de desbalance de clases.
+
+D. Análisis bivariado
+
+Analizar la relación entre cada variable independiente y la variable dependiente.
+
+Incluir:
+
+Tablas de contingencia.
+
+Distribuciones por categoría.
+
+Comparación de medias entre grupos.
+
+Gráficos de barras.
+
+Histogramas por categoría objetivo.
+
+Boxplots por categoría objetivo.
+
+Correlaciones entre variables cuantitativas.
+
+V de Cramér para variables categóricas, cuando corresponda.
+
+Generar interpretaciones automáticas sobre las posibles relaciones identificadas, diferenciando asociación estadística de causalidad.
+
+MÓDULO 4. Limpieza y preparación de información
+
+Implementar un módulo configurable de preparación de datos.
+
+A. Tratamiento de valores faltantes
+
+Variables numéricas:
+
+Media.
+
+Mediana.
+
+KNN.
+
+Imputación mediante modelos predictivos.
+
+Eliminación justificada.
+
+Variables categóricas:
+
+Moda.
+
+Categoría desconocida.
+
+Imputación predictiva.
+
+Presentar el porcentaje de valores faltantes antes y después del tratamiento.
+
+B. Tratamiento de valores extremos
+
+Implementar:
+
+IQR.
+
+Z-Score.
+
+Winsorización.
+
+Eliminación justificada.
+
+Conservación de valores originales.
+
+C. Transformación de variables
+
+Permitir:
+
+One-Hot Encoding.
+
+Ordinal Encoding.
+
+Variables dummy.
+
+Transformación de variables categóricas.
+
+Transformaciones logarítmicas.
+
+Estandarización.
+
+Normalización.
+
+Tratamiento de fechas.
+
+La estandarización debe ser opcional y utilizada cuando aporte valor, especialmente en modelos con regularización.
+
+D. Selección de variables
+
+Permitir:
+
+Selección manual.
+
+Selección basada en conocimiento del negocio.
+
+Análisis de correlación.
+
+Identificación de multicolinealidad.
+
+VIF (Variance Inflation Factor).
+
+Identificación de variables redundantes.
+
+Identificación de variables con baja variabilidad.
+
+Advertir sobre posibles variables que generen multicolinealidad o problemas de estimación.
+
+E. Control de preparación
+
+Permitir visualizar:
+
+Base original.
+
+Base limpia.
+
+Base transformada.
+
+Resumen de modificaciones.
+
+Historial de operaciones.
+
+Implementar un pipeline reproducible.
+
+Todas las imputaciones, codificaciones y transformaciones deben aprenderse exclusivamente con los datos de entrenamiento para evitar Data Leakage.
+
+MÓDULO 5. Fundamentos y configuración de la regresión logística
+
+Este módulo debe reproducir los fundamentos metodológicos del PDF de Hugo Martínez.
+
+Explicar que la regresión logística es un algoritmo de aprendizaje supervisado utilizado para estimar la probabilidad de ocurrencia de una categoría binaria.
+
+A. Función logística
+
+Implementar la función:
+
+p = 1 / (1 + e^(-z))
+
+Donde:
+
+z = β₀ + β₁X₁ + β₂X₂ + ... + βₙXₙ
+
+Mostrar la transformación logística y explicar cómo convierte una combinación lineal de variables independientes en una probabilidad entre cero y uno.
+
+B. Función logit
+
+Implementar:
+
+Logit(p) = ln(p / (1-p))
+
+Explicar la relación entre:
+
+Probabilidad.
+
+Odds.
+
+Log-odds.
+
+Coeficientes del modelo.
+
+C. Tipos de regresión logística
+
+Implementar como mínimo:
+
+Regresión logística binaria.
+
+Como extensiones opcionales:
+
+Regresión logística multinomial.
+
+Regresión logística ordinal.
+
+La aplicación debe distinguir claramente los modelos y sus supuestos. La implementación principal debe ser la regresión logística binaria, siguiendo el material metodológico adjunto.
+
+D. Métodos de estimación
+
+Utilizar máxima verosimilitud como método principal de estimación.
+
+Permitir seleccionar:
+
+Modelo sin regularización.
+
+Regularización L1.
+
+Regularización L2.
+
+Elastic Net, cuando sea compatible.
+
+Utilizar Statsmodels para inferencia estadística y Scikit-learn para modelamiento predictivo y regularización.
+
+MÓDULO 6. Construcción y estimación del modelo
+
+Permitir seleccionar las variables independientes que participarán en el modelo.
+
+Construir la ecuación:
+
+Logit(p) = β₀ + β₁X₁ + β₂X₂ + ... + βₙXₙ
+
+Mostrar los resultados de la estimación:
+
+Variable.
+
+Coeficiente estimado.
+
+Error estándar.
+
+Estadístico z.
+
+Valor p.
+
+Intervalo de confianza.
+
+Odds Ratio.
+
+Interpretación del coeficiente.
+
+Implementar pruebas de hipótesis individuales:
+
+H₀: βᵢ = 0
+
+H₁: βᵢ ≠ 0
+
+Permitir establecer niveles de significancia de:
+
+1%.
+
+5%.
+
+10%.
+
+Mostrar cuáles variables presentan evidencia estadística de asociación con el resultado.
+
+Incluir el análisis de significancia global del modelo mediante pruebas apropiadas, como la prueba de razón de verosimilitud.
+
+Presentar también:
+
+Log-Likelihood.
+
+Log-Likelihood nulo.
+
+AIC.
+
+BIC.
+
+Pseudo R² de McFadden.
+
+Deviance.
+
+Número de observaciones.
+
+No presentar el pseudo R² como si fuera equivalente al R² de una regresión lineal.
+
+MÓDULO 7. Selección automática de variables y modelos alternativos
+
+Incorporar mecanismos para comparar diferentes especificaciones.
+
+A. Métodos de selección
+
+Selección manual.
+
+Forward Selection.
+
+Backward Elimination.
+
+Stepwise (Both Directions).
+
+Selección mediante AIC.
+
+Selección mediante BIC.
+
+Regularización L1 (Lasso).
+
+Reproducir la funcionalidad del código R:
+
+step(modelo.logit, direction="both")
+
+La aplicación debe permitir realizar selección bidireccional de variables y visualizar cómo cambia la especificación del modelo.
+
+Mostrar:
+
+Variables iniciales.
+
+Variables incorporadas.
+
+Variables eliminadas.
+
+Criterio utilizado.
+
+AIC o BIC por iteración.
+
+Modelo final seleccionado.
+
+La selección Stepwise debe ser opcional, no el único método disponible. Advertir que la selección automática puede generar inestabilidad e inferencia optimista si se utiliza sin validación independiente.
+
+MÓDULO 8. Interpretación de coeficientes y Odds Ratios
+
+Este es uno de los módulos más importantes.
+
+Implementar la transformación:
+
+Odds Ratio = e^(β)
+
+Explicar:
+
+Coeficiente positivo: aumenta los log-odds del evento modelado.
+
+Coeficiente negativo: disminuye los log-odds del evento modelado.
+
+Odds Ratio mayor que 1: multiplica las odds hacia un mayor valor.
+
+Odds Ratio menor que 1: multiplica las odds hacia un menor valor.
+
+Odds Ratio igual a 1: no representa cambio en las odds.
+
+Permitir interpretar cada variable individualmente.
+
+Ejemplo:
+
+Si β = 0.40:
+
+OR = e^0.40 = 1.49
+
+Interpretación: manteniendo constantes las demás variables, un incremento de una unidad en la variable multiplica las odds del evento aproximadamente por 1.49, equivalente a un aumento del 49% en las odds.
+
+Si β = -0.40:
+
+OR = e^-0.40 = 0.67
+
+Interpretación: las odds se multiplican aproximadamente por 0.67, es decir, disminuyen un 33%.
+
+Para variables categóricas, identificar la categoría de referencia y comparar cada categoría frente a ella.
+
+Incluir intervalos de confianza de los Odds Ratios.
+
+MÓDULO 9. Simulador de escenarios y probabilidades
+
+Reproducir y ampliar la lógica de escenarios del código R.
+
+El usuario debe poder seleccionar una observación o ingresar manualmente valores para las variables independientes.
+
+El sistema debe calcular:
+
+El valor del predictor lineal (z).
+
+Los log-odds.
+
+Los odds.
+
+La probabilidad estimada.
+
+La clasificación según el umbral seleccionado.
+
+Implementar un simulador que permita modificar los valores de las variables y observar cómo cambia la probabilidad estimada.
+
+A. Análisis de escenarios individuales
+
+Permitir modificar una variable manteniendo las demás constantes.
+
+Mostrar:
+
+Probabilidad inicial.
+
+Probabilidad después del cambio.
+
+Diferencia absoluta en puntos porcentuales.
+
+Variación relativa de las odds.
+
+Gráfico de evolución de la probabilidad.
+
+B. Análisis de escenarios múltiples
+
+Permitir modificar simultáneamente diferentes variables.
+
+C. Curvas de sensibilidad
+
+Construir gráficos que permitan observar cómo cambia la probabilidad del evento según el comportamiento de una variable independiente.
+
+D. Odds y probabilidad base
+
+Incorporar una sección pedagógica que permita comprender cómo las odds se relacionan con las probabilidades.
+
+Si se reproduce el procedimiento de odds base del código R, identificarlo como una simulación específica y no confundirlo con la predicción estándar del modelo.
+
+La predicción oficial debe obtenerse utilizando la ecuación logística completa, incluyendo intercepto y coeficientes estimados.
+
+MÓDULO 10. Entrenamiento y validación
+
+Permitir configurar la distribución de los datos:
+
+Entrenamiento: 75%.
+
+Prueba: 25%.
+
+Permitir modificar estos porcentajes, por ejemplo:
+
+70% / 30%.
+
+75% / 25%.
+
+80% / 20%.
+
+Opcionalmente incorporar un conjunto independiente de validación.
+
+Implementar:
+
+Holdout.
+
+K-Fold Cross Validation.
+
+Stratified K-Fold.
+
+Validación cruzada repetida.
+
+Para información temporal, permitir particiones cronológicas.
+
+Incluir:
+
+random_state.
+
+Semilla reproducible.
+
+Distribución de clases en cada conjunto.
+
+Control del desbalance entre entrenamiento y prueba.
+
+Reproducir el procedimiento del código R mediante una división aleatoria de entrenamiento y prueba, con semilla configurable.
+
+MÓDULO 11. Evaluación del modelo y matriz de confusión
+
+Implementar el cálculo de predicciones y probabilidades.
+
+Permitir configurar el umbral de clasificación:
+
+0.50 como valor inicial.
+
+0.40.
+
+0.30.
+
+0.20.
+
+Cualquier valor entre 0 y 1.
+
+El umbral debe poder modificarse mediante un slider interactivo.
+
+Mostrar cómo cambia la matriz de confusión cuando se modifica el umbral.
+
+A. Matriz de confusión
+
+Calcular:
+
+Verdaderos positivos (TP).
+
+Verdaderos negativos (TN).
+
+Falsos positivos (FP).
+
+Falsos negativos (FN).
+
+B. Métricas de clasificación
+
+Calcular:
+
+Accuracy.
+
+Precision.
+
+Recall.
+
+Sensibilidad.
+
+Especificidad.
+
+F1-Score.
+
+Balanced Accuracy.
+
+Tasa de error total.
+
+Valor predictivo positivo.
+
+Valor predictivo negativo.
+
+Presentar resultados para entrenamiento, validación y prueba.
+
+C. Comparación de umbrales
+
+Generar una tabla que permita comparar:
+
+Umbral
+
+Accuracy
+
+Precision
+
+Recall
+
+F1
+
+Especificidad
+
+Permitir seleccionar el umbral óptimo según el objetivo del negocio.
+
+No asumir que 0.5 es siempre el mejor umbral.
+
+MÓDULO 12. Curva ROC y AUC
+
+Reproducir la metodología del código R utilizando la curva ROC.
+
+Implementar:
+
+True Positive Rate.
+
+False Positive Rate.
+
+Curva ROC.
+
+Área bajo la curva (AUC).
+
+Mostrar gráficamente la curva ROC e incluir la línea de referencia aleatoria.
+
+Interpretar el valor del AUC y permitir comparar modelos.
+
+Incluir también:
+
+Tabla de puntos de corte.
+
+Sensibilidad por umbral.
+
+Especificidad por umbral.
+
+Youden J.
+
+Advertir que el AUC mide capacidad de discriminación y no calibración de probabilidades.
+
+MÓDULO 13. Curvas Precision-Recall
+
+Incorporar:
+
+Precision-Recall Curve.
+
+Average Precision.
+
+Precision por punto de corte.
+
+Recall por punto de corte.
+
+Permitir analizar el equilibrio entre precisión y exhaustividad.
+
+Este módulo es especialmente importante para bases desbalanceadas, como riesgo de crédito, fraude o incumplimiento.
+
+MÓDULO 14. Lift Chart, Gains Chart y ganancias económicas
+
+Reproducir las funcionalidades del código R mediante los paquetes ROCR y lift.
+
+Implementar:
+
+A. Lift Chart
+
+Lift acumulado.
+
+Lift no acumulado.
+
+Comparación contra selección aleatoria.
+
+Ranking de observaciones por probabilidad estimada.
+
+B. Gains Chart
+
+Ganancia acumulada.
+
+Porcentaje de población contactada.
+
+Porcentaje de eventos positivos identificados.
+
+C. Análisis económico
+
+Permitir que el usuario defina:
+
+Costo de contactar una observación.
+
+Beneficio por identificar un evento positivo.
+
+Costo de un falso positivo.
+
+Costo de un falso negativo.
+
+Presupuesto disponible.
+
+Calcular:
+
+Ganancia neta.
+
+Costo esperado.
+
+Beneficio esperado.
+
+ROI de la estrategia.
+
+Umbral económicamente óptimo.
+
+No utilizar fórmulas de ganancia del ejemplo R como reglas universales. El usuario debe configurar los costos y beneficios de acuerdo con su sector y objetivo.
+
+MÓDULO 15. Diagnóstico y validación estadística
+
+Implementar un módulo especializado en evaluar los supuestos y la estabilidad del modelo.
+
+Verificar:
+
+Independencia de las observaciones.
+
+Linealidad en el logit para predictores cuantitativos.
+
+Multicolinealidad.
+
+Posibles problemas de separación completa o cuasicompleta.
+
+Observaciones influyentes.
+
+Valores extremos.
+
+Tamaño suficiente de eventos respecto al número de parámetros estimados.
+
+Estabilidad de los coeficientes.
+
+Incluir:
+
+VIF.
+
+Análisis de residuos y diagnósticos apropiados para modelos binomiales.
+
+Distancia de Cook y medidas de influencia cuando sean aplicables.
+
+Intervalos de confianza.
+
+Comparación de coeficientes entre especificaciones.
+
+Generar alertas y recomendaciones metodológicas.
+
+No tratar todos los supuestos de la regresión lineal como si fueran aplicables a la regresión logística.
+
+MÓDULO 16. Calibración del modelo
+
+Incorporar un análisis de calibración de probabilidades.
+
+Implementar:
+
+Curva de calibración.
+
+Brier Score.
+
+Comparación entre probabilidades estimadas y frecuencias observadas.
+
+ECE (Expected Calibration Error), como indicador complementario.
+
+Calibración por deciles de riesgo.
+
+Permitir comparar la calibración antes y después de aplicar técnicas de recalibración cuando sean necesarias.
+
+Diferenciar claramente discriminación y calibración.
+
+MÓDULO 17. Interpretabilidad y reglas de negocio
+
+Construir un módulo que traduzca los resultados del modelo a lenguaje empresarial.
+
+Mostrar:
+
+Variables con mayor asociación estadística.
+
+Variables con mayor contribución predictiva.
+
+Coeficientes.
+
+Odds Ratios.
+
+Intervalos de confianza.
+
+Probabilidades estimadas.
+
+Escenarios de mayor y menor probabilidad.
+
+Principales factores asociados al evento.
+
+Incluir explicaciones individuales de las predicciones.
+
+Permitir generar reportes como:
+
+"El modelo estima una probabilidad de incumplimiento del 72% para esta observación. Las características que contribuyen a esta estimación, de acuerdo con los coeficientes del modelo, son..."
+
+Distinguir las contribuciones del modelo de las explicaciones causales.
+
+MÓDULO 18. Simulador de predicciones
+
+Crear una sección para ingresar nuevos registros.
+
+El usuario debe poder diligenciar los valores de las variables independientes.
+
+El sistema debe:
+
+Validar los datos ingresados.
+
+Aplicar las transformaciones necesarias.
+
+Ejecutar el modelo entrenado.
+
+Calcular la probabilidad.
+
+Clasificar el resultado según el umbral.
+
+Mostrar los factores asociados.
+
+Presentar una interpretación del resultado.
+
+Permitir cargar un archivo con nuevos registros para realizar predicciones masivas.
+
+Generar un archivo descargable con:
+
+Identificador del registro.
+
+Probabilidad estimada.
+
+Clasificación.
+
+Umbral aplicado.
+
+Variables de entrada.
+
+MÓDULO 19. Comparación de modelos
+
+Permitir comparar diferentes especificaciones de regresión logística:
+
+Modelo inicial con todas las variables.
+
+Modelo seleccionado mediante Stepwise.
+
+Modelo optimizado mediante AIC.
+
+Modelo optimizado mediante BIC.
+
+Modelo con regularización L1.
+
+Modelo con regularización L2.
+
+Modelo con diferentes conjuntos de variables.
+
+Generar una tabla comparativa:
+
+Número de variables.
+
+Log-Likelihood.
+
+AIC.
+
+BIC.
+
+Pseudo R².
+
+Accuracy.
+
+Precision.
+
+Recall.
+
+F1-Score.
+
+ROC-AUC.
+
+PR-AUC.
+
+Brier Score.
+
+Resultados de validación cruzada.
+
+Permitir identificar el modelo que ofrece el mejor equilibrio entre capacidad predictiva, estabilidad, calibración e interpretabilidad.
+
+MÓDULO 20. Interpretación automática mediante IA
+
+Incorporar un asistente de inteligencia artificial que interprete los resultados reales del modelo.
+
+Debe poder responder:
+
+¿Qué significa la ecuación estimada?
+
+¿Qué variables son estadísticamente significativas?
+
+¿Cómo interpretar los coeficientes?
+
+¿Qué significan los Odds Ratios?
+
+¿Qué variables incrementan o reducen las odds del evento?
+
+¿Qué significa un AUC determinado?
+
+¿Cómo interpretar la matriz de confusión?
+
+¿Qué umbral debería utilizar?
+
+¿El modelo está bien calibrado?
+
+¿Existen problemas de multicolinealidad?
+
+¿El modelo presenta problemas de sobreajuste?
+
+¿Qué recomendaciones pueden derivarse del modelo?
+
+La IA debe utilizar los resultados efectivamente calculados.
+
+No debe inventar estadísticas, coeficientes, pruebas ni conclusiones.
+
+Debe diferenciar significancia estadística, capacidad predictiva y relevancia empresarial.
+
+4. DISEÑO DE LA INTERFAZ
+
+Construir una interfaz moderna, profesional, intuitiva y orientada a analistas de datos y usuarios empresariales.
+
+La tecnología preferida es Python Dash, utilizando Plotly para visualizaciones.
+
+Organizar la aplicación mediante un menú lateral:
+
+Inicio y configuración.
+
+Carga de información.
+
+Análisis exploratorio.
+
+Limpieza y preparación.
+
+Selección de variables.
+
+Construcción del modelo.
+
+Coeficientes y Odds Ratios.
+
+Selección Stepwise.
+
+Simulador de probabilidades.
+
+Validación y evaluación.
+
+Matriz de confusión.
+
+Curva ROC y AUC.
+
+Precision-Recall.
+
+Lift y Gains.
+
+Análisis económico.
+
+Diagnóstico estadístico.
+
+Calibración.
+
+Comparación de modelos.
+
+Interpretabilidad.
+
+Predicciones.
+
+Reportes.
+
+Incluir tarjetas KPI, tablas interactivas, filtros, gráficos dinámicos y controles deslizantes.
+
+Permitir que el usuario regrese a módulos anteriores sin perder la información ni el entrenamiento realizado.
+
+5. EXPORTACIÓN DE RESULTADOS
+
+Permitir descargar:
+
+Base original.
+
+Base limpia.
+
+Base transformada.
+
+Estadísticas descriptivas.
+
+Informe de calidad de datos.
+
+Resultados del modelo.
+
+Tabla de coeficientes.
+
+Odds Ratios.
+
+Intervalos de confianza.
+
+Resultados Stepwise.
+
+Matriz de confusión.
+
+Curva ROC.
+
+Curva Precision-Recall.
+
+Lift Chart.
+
+Gains Chart.
+
+Predicciones individuales.
+
+Predicciones masivas.
+
+Informe ejecutivo en PDF.
+
+Modelo entrenado.
+
+Pipeline de procesamiento.
+
+El informe debe incluir:
+
+Objetivo del modelo.
+
+Descripción de la información.
+
+Preparación de los datos.
+
+Variables utilizadas.
+
+Metodología.
+
+Ecuación estimada.
+
+Interpretación de coeficientes.
+
+Odds Ratios.
+
+Pruebas de hipótesis.
+
+Métricas de desempeño.
+
+Validación.
+
+Diagnósticos.
+
+Limitaciones.
+
+Recomendaciones.
+
+6. ARQUITECTURA TECNOLÓGICA
+
+Utilizar preferiblemente:
+
+Componente
+
+Tecnología
+
+Lenguaje
+
+Python
+
+Interfaz
+
+Dash
+
+Procesamiento
+
+Pandas y NumPy
+
+Estadística
+
+Statsmodels y SciPy
+
+Machine Learning
+
+Scikit-learn
+
+Visualizaciones
+
+Plotly
+
+Análisis de multicolinealidad
+
+Statsmodels
+
+Interpretabilidad
+
+Coeficientes, Odds Ratios y SHAP cuando corresponda
+
+Exportación Excel
+
+OpenPyXL
+
+Exportación PDF
+
+ReportLab
+
+Serialización
+
+Joblib
+
+Organizar el código por módulos independientes.
+
+Separar:
+
+Interfaz.
+
+Procesamiento.
+
+Preparación de datos.
+
+Estimación estadística.
+
+Entrenamiento.
+
+Validación.
+
+Evaluación.
+
+Visualización.
+
+Exportación.
+
+Implementar manejo de errores, validaciones, control de memoria y registro de operaciones.
+
+7. CRITERIOS DE CALIDAD METODOLÓGICA Y CIENTÍFICA
+
+La aplicación debe garantizar:
+
+Correcta implementación de la función logística.
+
+Correcta estimación de parámetros.
+
+Estimación mediante máxima verosimilitud.
+
+Correcta interpretación de coeficientes y Odds Ratios.
+
+Correcta identificación de categorías de referencia.
+
+Pruebas de hipótesis individuales y globales.
+
+Control de multicolinealidad.
+
+Validación de los supuestos.
+
+Control del desbalance de clases.
+
+Prevención de Data Leakage.
+
+Evaluación en datos independientes.
+
+Análisis de discriminación y calibración.
+
+Reproducibilidad.
+
+Interpretabilidad.
+
+Adaptabilidad a diferentes sectores económicos.
+
+FUENTES BIBLIOGRÁFICAS Y REFERENTES METODOLÓGICOS
+
+Utilizar los siguientes referentes:
+
+Hugo Martínez Gallego: material adjunto de Regresión Logística. Referencia principal para la estructura metodológica del proyecto.
+
+Hosmer, Lemeshow y Sturdivant: Applied Logistic Regression. Fundamentos de estimación, interpretación y diagnóstico.
+
+David W. Hosmer y Stanley Lemeshow: referentes en regresión logística aplicada.
+
+Agresti: An Introduction to Categorical Data Analysis. Análisis estadístico de variables categóricas.
+
+James, Witten, Hastie y Tibshirani: An Introduction to Statistical Learning. Fundamentos de clasificación, regresión logística y validación.
+
+Hastie, Tibshirani y Friedman: The Elements of Statistical Learning. Regularización y modelos predictivos.
+
+Fawcett: An Introduction to ROC Analysis. Fundamentos de evaluación ROC.
+
+Documentación oficial de Statsmodels: estimación de modelos GLM y Logit, pruebas estadísticas e interpretación.
+
+Documentación oficial de Scikit-learn: clasificación, regularización, validación y métricas.
+
+Consultar también investigaciones y publicaciones de especialistas reconocidos en modelamiento estadístico y Machine Learning, diferenciando sus aportes de la metodología específica del documento adjunto.
+
+8. FASES DE EJECUCIÓN DEL PROYECTO
+
+Actúa como un equipo de desarrollo que debe entregar una aplicación completamente funcional.
+
+No te limites a diseñar una interfaz ni a entregar pseudocódigo.
+
+FASE 1. Análisis metodológico
+
+Estudiar el PDF y el código R.
+
+Identificar las funcionalidades y metodologías.
+
+Documentar las fórmulas estadísticas.
+
+Establecer las equivalencias entre R y Python.
+
+Identificar mejoras metodológicas.
+
+Definir la arquitectura.
+
+FASE 2. Diseño técnico
+
+Crear la estructura de carpetas.
+
+Definir los módulos.
+
+Diseñar el flujo de procesamiento.
+
+Establecer las conexiones entre los componentes.
+
+Definir las librerías.
+
+FASE 3. Desarrollo
+
+Construir todos los módulos solicitados.
+
+Priorizar la integración de:
+
+Carga de datos.
+
+Análisis exploratorio.
+
+Preparación de información.
+
+Estimación logística.
+
+Interpretación de coeficientes.
+
+Odds Ratios.
+
+Simulador de probabilidades.
+
+Validación.
+
+Evaluación.
+
+Lift y Gains.
+
+Exportación.
+
+FASE 4. Pruebas funcionales y estadísticas
+
+Probar la aplicación con bases de datos que incluyan:
+
+Variables numéricas.
+
+Variables categóricas.
+
+Variables binarias.
+
+Datos faltantes.
+
+Clases desbalanceadas.
+
+Diferentes cantidades de observaciones.
+
+Variables con multicolinealidad.
+
+Casos de separación completa o cuasicompleta.
+
+Verificar que:
+
+Los coeficientes sean consistentes con la estimación estadística.
+
+Las probabilidades estén entre cero y uno.
+
+Los Odds Ratios sean correctos.
+
+Las matrices de confusión coincidan con las predicciones.
+
+Las curvas ROC se calculen correctamente.
+
+Los resultados sean reproducibles.
+
+Los escenarios respondan correctamente a los cambios.
+
+Los procesos de validación eviten fuga de información.
+
+FASE 5. Entrega
+
+Entregar:
+
+Código fuente completo.
+
+Aplicación funcional.
+
+Estructura de carpetas.
+
+Archivo requirements.txt.
+
+Instrucciones de instalación.
+
+Instrucciones de ejecución.
+
+Bases de datos de prueba.
+
+Documentación técnica.
+
+Manual de usuario.
+
+No entregar botones decorativos ni funcionalidades simuladas.
+
+No detenerse cuando la interfaz esté construida. Completar la lógica estadística y verificar el funcionamiento integral de la aplicación.
+
+9. RESULTADO ESPERADO
+
+Construir una plataforma profesional de Machine Learning basada en regresión logística, capaz de transformar bases de datos de diferentes sectores económicos en modelos predictivos interpretables y útiles para la toma de decisiones.
+
+El principal diferencial debe ser la integración de:
+
+Análisis descriptivo y preparación de datos.
+
+Estimación estadística.
+
+Interpretación de coeficientes.
+
+Odds Ratios.
+
+Selección de variables.
+
+Simulación de probabilidades.
+
+Validación estadística.
+
+Evaluación predictiva.
+
+Análisis de umbrales.
+
+Curvas ROC, Lift y Gains.
+
+Análisis de rentabilidad.
+
+Interpretabilidad empresarial.
+
+La aplicación debe ser útil tanto para un analista de datos que requiere rigor estadístico como para un consultor financiero, comercial o empresarial que necesita comprender y utilizar los resultados del modelo.
+
+La prioridad absoluta es el rigor metodológico, la precisión estadística, la interpretabilidad y el funcionamiento real de cada componente.

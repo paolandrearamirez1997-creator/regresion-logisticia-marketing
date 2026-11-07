@@ -1,0 +1,6 @@
+{
+  "name": "LogitAnalytics Pro - Plataforma de Regresión Logística y Machine Learning",
+  "description": "Plataforma profesional e integral de analítica predictiva, inferencia estadística, estimación por máxima verosimilitud, selección stepwise y simulación de probabilidades mediante regresión logística.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
